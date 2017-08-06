@@ -8,17 +8,24 @@ function spinalCase(str) {
     .toLowerCase();
 }
 
-let test1 = spinalCase("This Is Spinal Tap");
-// "this-is-spinal-tap"
+const test1 = spinalCase('This Is Spinal Tap');
+// 'this-is-spinal-tap'
 
-let test2 = spinalCase("thisIsSpinalTap");
-// "this-is-spinal-tap"
+const test2 = spinalCase('thisIsSpinalTap');
+// 'this-is-spinal-tap'
 
-let test3 = spinalCase("The_Andy_Griffith_Show");
-// "the-andy-griffith-show"
+const test3 = spinalCase('The_Andy_Griffith_Show');
+// 'the-andy-griffith-show'
 
-let test4 = spinalCase("Teletubbies say Eh-oh");
-// "teletubbies-say-eh-oh"
+const test4 = spinalCase('Teletubbies say Eh-oh');
+// 'teletubbies-say-eh-oh'
 
-let test5 = spinalCase("AllThe-small Things");
-// "all-the-small-things"
+const test5 = spinalCase('AllThe-small Things');
+// 'all-the-small-things'
+
+console.log('test1: ', test1);
+console.log('test2: ', test2);
+console.log('test2: ', test3);
+console.log('test3: ', test4);
+console.log('test4: ', test4);
+console.log('test5: ', test5);

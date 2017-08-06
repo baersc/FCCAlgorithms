@@ -27,9 +27,8 @@ function telephoneCheck(str) {
   function test(num) {
     const multParens = Array.from(num).filter(x => x.match(parensRe));
     const arr = Array.from(num).filter(x => x.match(numRe));
-    if (arr.length === 11 && str[0] !== '1') {
-      return false;
-    } else if (multParens.length > 2) {
+    if ((arr.length === 11 && str[0] !== '1') ||
+        multParens.length > 2) {
       return false;
     }
     return arr.length === 10 || arr.length === 11;
@@ -39,15 +38,18 @@ function telephoneCheck(str) {
   const parenClose = str.indexOf(')');
   if (parenOpen === -1 && parenClose === -1) {
     return test(str);
-  } else if (parenOpen > 0 && parenClose < 0) {
+  } else if (
+    (parenOpen > 0 && parenClose < 0) ||
+    (parenClose > 0 && parenOpen < 0)
+  ) {
     return false;
-  } else if (parenClose > 0 && parenOpen < 0) {
-    return false;
-  } else if (parenOpen !== -1) {
-    if (parenOpen === 0 || parenOpen === 1 || parenOpen === 2) {
-      if (parenClose === parenOpen + 4) {
-        return test(str);
-      }
+  } else if (
+    (parenOpen !== -1 && parenOpen === 0) ||
+      parenOpen === 1 ||
+      parenOpen === 2
+  ) {
+    if (parenClose === parenOpen + 4) {
+      return test(str);
     }
   } else if (parenClose !== -1) {
     return test(str);
@@ -116,4 +118,4 @@ console.log(JSON.stringify(tests, null, 2));
  * test25 = false
  * test26 = false
  * test27 = false
- *************************************************************************** */
+ ****************************************************************************/

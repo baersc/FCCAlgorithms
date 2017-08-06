@@ -6,9 +6,9 @@
 // of the JavaScript substring methods instead.
 
 function confirmEnding(str, target) {
-    // "Never give up and good luck will find you."
-    // -- Falcor
-    return str.substr(-target.length) === target;
+  return str.substr(-target.length) === target;
 }
 
-var run = confirmEnding("welcome to my house", "June's house");
+const run = confirmEnding('welcome to my house', 'June\'s house');
+
+console.log(run);

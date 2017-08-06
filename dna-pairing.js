@@ -14,26 +14,28 @@
 
 // jshint esversion:6
 function pairElement(str) {
-  let ele = str.split('');
-  let complete = [];
+  const ele = str.split('');
+  const complete = [];
 
-  for (let i = 0; i < ele.length; i++) {
-    let match = [];
+  for (let i = 0; i < ele.length; i += 1) {
+    const match = [];
     match.push(ele[i]);
 
     switch (ele[i]) {
-    case 'A':
-      match.push('T');
-      break;
-    case 'C':
-      match.push('G');
-      break;
-    case 'G':
-      match.push('C');
-      break;
-    case 'T':
-      match.push('A');
-      break;
+      case 'A':
+        match.push('T');
+        break;
+      case 'C':
+        match.push('G');
+        break;
+      case 'G':
+        match.push('C');
+        break;
+      case 'T':
+        match.push('A');
+        break;
+      default:
+        match.push('');
     }
 
     complete.push(match);
@@ -42,11 +44,15 @@ function pairElement(str) {
   return complete;
 }
 
-let test1 = pairElement("ATCGA");
+const test1 = pairElement('ATCGA');
 // [["A","T"],["T","A"],["C","G"],["G","C"],["A","T"]]
 
-let test2 = pairElement("TTGAG");
+const test2 = pairElement('TTGAG');
 // [["T","A"],["T","A"],["G","C"],["A","T"],["G","C"]]
 
-let test3 = pairElement("CTCTA");
+const test3 = pairElement('CTCTA');
 // [["C","G"],["T","A"],["C","G"],["T","A"],["A","T"]]
+
+console.log('test1:\n', test1);
+console.log('test2:\n', test2);
+console.log('test3:\n', test3);

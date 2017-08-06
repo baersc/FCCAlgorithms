@@ -3,10 +3,12 @@
 // Boolean primitives are true and false.
 
 // jshint esversion:6
+/*
 function booWhoSubmitted(bool) {
-  let test = true;
+  const test = true;
   return typeof bool === typeof test;
 }
+*/
 
 
 // The above code is what I submitted to FCC. The code below is the solution I
@@ -17,32 +19,43 @@ function booWho(bool) {
   return typeof bool === 'boolean';
 }
 
-let test1 = booWho(true);
+const test1 = booWho(true);
 // true
 
-let test2 = booWho(false);
+const test2 = booWho(false);
 // true
 
-let test3 = booWho([1, 2, 3]);
+const test3 = booWho([1, 2, 3]);
 // false
 
-let test4 = booWho([].slice);
+const test4 = booWho([].slice);
 // false
 
-let test5 = booWho({ "a": 1 });
+const test5 = booWho({ a: 1 });
 // false
 
-let test6 = booWho(1);
+const test6 = booWho(1);
 // false
 
-let test7 = booWho(NaN);
+const test7 = booWho(NaN);
 // false
 
-let test8 = booWho("a");
+const test8 = booWho('a');
 // false
 
-let test9 = booWho("true");
+const test9 = booWho('true');
 // false
 
-let test10 = booWho("false");
+const test10 = booWho('false');
 // false
+
+console.log('test1: ', test1);
+console.log('test2: ', test2);
+console.log('test3: ', test3);
+console.log('test4: ', test4);
+console.log('test5: ', test5);
+console.log('test6: ', test6);
+console.log('test7: ', test7);
+console.log('test8: ', test8);
+console.log('test9: ', test9);
+console.log('test10: ', test10);

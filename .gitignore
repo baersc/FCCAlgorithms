@@ -2,3 +2,7 @@ roman-numerals.js
 roman-numerals2.js
 test.js
 ydkjs-module-test.js
+
+.*
+#*
+node_modules/
